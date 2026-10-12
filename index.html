@@ -4,19 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Política de Privacidad — ControlShopper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
     max-width: 720px;
     margin: 0 auto;
     padding: 32px 20px 80px;
     color: #0A1F1E;
-    line-height: 1.6;
+    line-height: 1.65;
     background: #EEF9F8;
   }
-  h1 { color: #00524A; font-size: 28px; margin-bottom: 4px; }
+  h1 { color: #00524A; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
   .fecha { color: #3D6B67; font-size: 13px; margin-bottom: 32px; }
-  h2 { color: #00524A; font-size: 19px; margin-top: 32px; }
+  h2 { color: #00524A; font-size: 19px; font-weight: 700; margin-top: 32px; }
   p, li { color: #0A1F1E; font-size: 15px; }
   ul { padding-left: 20px; }
   .card {
@@ -38,7 +41,7 @@
 <body>
 
 <h1>Política de Privacidad</h1>
-<p class="fecha">ControlShopper — Última actualización: septiembre de 2026</p>
+<p class="fecha">ControlShopper — Última actualización: octubre de 2026</p>
 
 <div class="card">
 <p>
@@ -49,19 +52,36 @@ usa.
 </p>
 </div>
 
-<h2>1. Qué datos recolecta la app</h2>
+<h2>1. Tus pedidos y ganancias se quedan en tu celular</h2>
 <div class="card">
-<p><strong>ControlShopper no recolecta, transmite ni comparte ningún dato personal con
-servidores externos.</strong> La aplicación funciona completamente de forma local en tu
-dispositivo.</p>
-<p>Los datos que ingresas (cantidad de SKUs, kilómetros recorridos, tarifas configuradas,
-turnos, historial de pedidos) se almacenan únicamente en el almacenamiento interno de tu
-propio teléfono, usando la tecnología estándar de Android para apps
-(<em>AsyncStorage</em>). Ningún tercero, incluido el desarrollador de la app, tiene acceso
-a esta información.</p>
+<p>Los datos que ingresas en la app (número de orden o SG, cantidad de SKUs, kilómetros
+recorridos, observaciones, tarifas configuradas, turnos e historial de pedidos) se
+almacenan <strong>únicamente en el almacenamiento interno de tu propio teléfono</strong>,
+usando la tecnología estándar para apps (<em>AsyncStorage</em>). Esta información no se
+envía a ningún servidor y nadie, incluido el desarrollador de la app, tiene acceso a ella.</p>
 </div>
 
-<h2>2. Exportación de datos</h2>
+<h2>2. Datos que sí se envían fuera del celular</h2>
+<div class="card">
+<p>Para que algunas funciones trabajen correctamente, la app envía una cantidad mínima de
+datos, que no permiten identificarte personalmente:</p>
+<ul>
+<li><strong>Identificador anónimo del dispositivo.</strong> Para administrar el período
+de prueba gratuito y permitir recuperar el acceso con un código en el mismo celular, la
+app genera un identificador a partir del ID del dispositivo (Android ID), transformado
+mediante un algoritmo irreversible (SHA-256). Este identificador se guarda en Firebase
+(Google) junto con la fecha de inicio de la prueba o la fecha de uso del código de
+acceso.</li>
+<li><strong>Datos de la suscripción.</strong> Para validar tu suscripción, la app usa
+RevenueCat, que recibe un identificador anónimo y el historial de compras de la
+suscripción.</li>
+</ul>
+<p>Estos datos se usan solo para el funcionamiento de la app y la prevención de abusos del
+período de prueba. No se comparten con terceros, no se venden y no se usan para
+publicidad. Todos los datos se transmiten de forma encriptada (HTTPS).</p>
+</div>
+
+<h2>3. Exportación de datos</h2>
 <div class="card">
 <p>ControlShopper permite exportar tu historial de pedidos en formato CSV o Excel (XLSX).
 Estos archivos se generan localmente en tu dispositivo y solo se comparten si tú decides
@@ -70,7 +90,7 @@ aplicación de tu elección) usando el sistema de compartir de Android. La app n
 estos archivos a ningún servidor por sí misma.</p>
 </div>
 
-<h2>3. Permisos que solicita la app</h2>
+<h2>4. Permisos que solicita la app</h2>
 <div class="card">
 <p>La app puede solicitar acceso al sistema de almacenamiento del dispositivo únicamente
 para guardar y compartir los archivos exportados (CSV/XLSX) que tú generas. No se solicita
@@ -78,35 +98,48 @@ acceso a cámara, contactos, ubicación, micrófono ni ningún otro dato sensibl
 dispositivo.</p>
 </div>
 
-<h2>4. Servicios de terceros</h2>
+<h2>5. Servicios de terceros</h2>
 <div class="card">
-<p>ControlShopper no utiliza servicios de analítica, publicidad, ni herramientas de
-seguimiento de terceros. No se integra con Google Analytics, Firebase Analytics, ni
-ningún servicio similar.</p>
+<p>La app utiliza únicamente estos servicios, para los fines descritos en el punto 2:</p>
+<ul>
+<li><strong>Google Play Facturación</strong>, para procesar los pagos de la suscripción.</li>
+<li><strong>RevenueCat</strong>, para validar el estado de la suscripción.</li>
+<li><strong>Firebase Cloud Firestore (Google)</strong>, para el período de prueba y los
+códigos de acceso.</li>
+</ul>
+<p>ControlShopper no utiliza servicios de publicidad ni de analítica (no se integra con
+Google Analytics, Firebase Analytics ni servicios similares).</p>
 </div>
 
-<h2>5. Suscripciones y pagos</h2>
+<h2>6. Suscripciones y pagos</h2>
 <div class="card">
-<p>Si la app ofrece una suscripción de pago, esta se gestiona exclusivamente a través de
-Google Play Facturación (Google Play Billing). ControlShopper no almacena ni tiene acceso
-a tus datos de tarjeta de crédito ni información financiera; esa información es manejada
-directamente por Google conforme a su propia política de privacidad.</p>
+<p>La suscripción se gestiona exclusivamente a través de Google Play Facturación (Google
+Play Billing). ControlShopper no almacena ni tiene acceso a tus datos de tarjeta de crédito
+ni a tu cuenta de Google; esa información es manejada directamente por Google conforme a su
+propia política de privacidad. Puedes cancelar tu suscripción en cualquier momento desde
+Google Play → Pagos y suscripciones.</p>
 </div>
 
-<h2>6. Menores de edad</h2>
+<h2>7. Menores de edad</h2>
 <div class="card">
 <p>ControlShopper no está dirigida a menores de edad y no recolecta intencionalmente
 información de menores de 13 años.</p>
 </div>
 
-<h2>7. Eliminación de datos</h2>
+<h2>8. Eliminación de datos</h2>
 <div class="card">
-<p>Como todos los datos se almacenan localmente en tu dispositivo, puedes eliminarlos en
-cualquier momento desinstalando la aplicación o borrando sus datos desde los ajustes de tu
-teléfono (Ajustes → Aplicaciones → ControlShopper → Almacenamiento → Borrar datos).</p>
+<p><strong>Datos en tu celular:</strong> puedes eliminarlos en cualquier momento
+desinstalando la aplicación o borrando sus datos desde los ajustes de tu teléfono
+(Ajustes → Aplicaciones → ControlShopper → Almacenamiento → Borrar datos).</p>
+<p><strong>Identificador anónimo y datos de suscripción:</strong> puedes solicitar su
+eliminación escribiendo a
+<a href="mailto:supportcontrolcoding@gmail.com">supportcontrolcoding@gmail.com</a>
+con el asunto "Eliminar mis datos". Responderemos dentro de 30 días. Ten en cuenta que, si
+eliminamos el registro del período de prueba, la app podría no reconocer que ya usaste la
+prueba gratuita en ese dispositivo.</p>
 </div>
 
-<h2>8. Cambios a esta política</h2>
+<h2>9. Cambios a esta política</h2>
 <div class="card">
 <p>Esta política puede actualizarse ocasionalmente para reflejar cambios en la
 aplicación. Cualquier cambio será publicado en esta misma página con su fecha de
